@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@using Day28_EFCore_CodeFirst_Solo.Context;
+
+@model List<Employee>
+
+
+<h1>Index</h1>
+
+<table class="table">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Edit Employee</th>
+        <th>Delete Employee</th>
+    </tr>
+    @foreach (Employee employee in Model)
+    {
+        <tr>
+            <td>@employee.FirstName</td>
+            <td>@employee.LastName</td>
+            <td>@employee.Email</td>
+            <td>heck</td>
+            <td><a href="../Employee/EditEmployee?Id=@employee.Id">Edit @employee.FirstName</a></td>
+            <td><a href="../Employee/DeleteEmployee?Id=@employee.Id">Delete @employee.FirstName</a></td>
+        </tr>
+    }
+
+</table>
+
+<a href="../Employee/AddEmployee">Add New Employee</a>

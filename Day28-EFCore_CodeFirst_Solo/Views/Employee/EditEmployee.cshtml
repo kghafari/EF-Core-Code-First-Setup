@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "EditEmployee";
+}
+@using Day28_EFCore_CodeFirst_Solo.Context;
+
+@model Employee
+
+<h1>Edit Employee</h1>
+
+<form action="../Employee/EditEmployee" method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <input type="text" name="FirstName" value="@Model.FirstName" placeholder="@Model.FirstName"/>
+    <input type="text" name="LastName" value="@Model.LastName" placeholder="@Model.LastName"/>
+    <input type="text" name="Email" value="@Model.Email" placeholder="@Model.Email"/>
+    <input type="submit" value="Update Employee" />
+</form>
+

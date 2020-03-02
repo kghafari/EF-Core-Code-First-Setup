@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "EditDepartment";
+}
+@using Day28_EFCore_CodeFirst_Solo.Context;
+@model Department
+
+<h1>Edit Department</h1>
+
+<form action="../Department/EditDepartment" method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <input type="text" name="Name" value="@Model.Name" placeholder="@Model.Name" />
+    <input type="text" name="Location" value="@Model.Location" placeholder="@Model.Location" />
+    <input type="text" name="Type" value="@Model.Type" placeholder="@Model.Type" />
+    <input type="number" name="Budget" value="@Model.Budget" placeholder="@Model.Budget" />
+    <input type="submit" class="btn btn-success" value="Update Department" />
+</form>
+

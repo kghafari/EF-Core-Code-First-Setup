@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@using Day28_EFCore_CodeFirst_Solo.Context;
+
+@model List<Department>
+
+<h1>Index</h1>
+
+<table class="table">
+    <tr>
+        <th>Dept. Name</th>
+        <th>Location</th>
+        <th>Type</th>
+        <th>Budget</th>
+        @*<th>Employees</th>*@
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (Department department in Model)
+    {
+        <tr>
+            <td>@department.Name</td>
+            <td>@department.Location</td>
+            <td>@department.Type</td>
+            <td>@department.Budget</td>
+            <td><a href="../Department/EditDepartment?Id=@department.Id">Edit @department.Name</a></td>
+            <td><a href="../Department/DeleteDepartment?Id=@department.Id">Delete @department.Name</a></td>
+        </tr>
+    }
+</table>
+
+<a href="../Department/AddDepartment">Add Department</a>
